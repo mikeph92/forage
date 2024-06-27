@@ -26,3 +26,13 @@
 # You may want to include a final function that ties everything together, to allow
 # the entire pipeline of loading the data and training the algorithm to be run all
 # at once
+
+import pandas as pd
+from module_helper import *
+
+folder_path = "/home/datasets/cognizant/"
+df = load_data(folder_path)
+
+data, label = create_target_and_predictors(df)
+
+train_algorithm_with_cross_validation(data, label)
